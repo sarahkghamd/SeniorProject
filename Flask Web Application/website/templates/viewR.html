@@ -1,0 +1,133 @@
+{% extends "base.html" %} {% block title %}View Reports{% endblock %} {% block content
+    %}
+<style>
+    html,
+    body {
+      width: 100vw;
+      height: 100vh;
+    }
+    
+    div {
+      width: 100%;
+      height: 100%
+    }
+    
+    body {
+      padding: 0;
+      margin: 0;
+      width: 100vw;
+      height: 100vh;
+      background: linear-gradient(to right,
+          #52A6E3 0%,
+          #52A6E3 50%,
+          #DBEEFF 50%,
+          #DBEEFF 100%);
+    }
+    
+    .rectangle {
+      position: relative;
+      width: 60%;
+      height: 650px;
+      background-color: white;
+      border-radius: 50px;
+      display: grid;
+      grid-template-columns: auto auto auto auto;
+      margin-top: 5%;
+      margin-bottom: 5%;
+    }
+    
+    .rectangle h3 {
+      color: #1187DD;
+      font-size: 32px;
+    
+    }
+    
+    .rec_box {
+      /* box-sizing: border-box; */
+      position: absolute;
+      width: 80%;
+      height: auto;
+      border: 2px solid #52A6E3;
+      border-radius: 16px;
+      margin: 5px;
+      left: 10%;
+      top: 30%;
+      text-align: left;
+      float: left;
+      color: #0062A9;
+      font-size: 20px;
+    }
+    
+    .rec_small {
+      box-sizing: border-box;
+      position: absolute;
+      width: 9%;
+      height: auto;
+      border: 2px solid #52A6E3;
+      color: #0062A9;
+      border-radius: 10px;
+      float: left;
+      text-align: left;
+      font-size: 20px;
+    }
+    
+    .text {
+      padding-left: 5%;
+      float: left;
+    }
+    
+    .sort {
+      position: absolute;
+      margin: 5px;
+      left: 10%;
+      top: 15%;
+    }
+    
+    .sort p {
+      font-size: 140%;
+      text-align: left;
+      color: #0062A9;
+    }
+    
+    .sort select {
+      color: #0062A9;
+      background-color: white;
+      text-align: left;
+      font-size: 20px;
+      border-radius: 11px;
+      border: 2px solid #1187DD;
+    }
+</style>
+
+<body>
+    <h1 style="color:white; top:10px; right:10px;">Welcome</h1>{{user.name}}
+
+    <center>
+        <div class="rectangle">
+            <h3>View Reports</h3>
+            <div class="sort">
+                <p>Sort by:
+                    <select>
+                        <option>Openness</option>
+                        <option>Conscientiousness</option>
+                        <option>Extraversion</option>
+                        <option>Agreeableness</option>
+                        <option>Neuroticism</option>
+                    </select>
+                </p>
+            </div>
+
+            <div class="rec_box">
+                <a class="text" href="/applicant-report">Name</a>
+                <p class="rec_small" style="left:50%;">O:</p>
+                <p class="rec_small" style="left:60%;">C:</p>
+                <p class="rec_small" style="left:70%;">E:</p>
+                <p class="rec_small" style="left:80%;">A:</p>
+                <p class="rec_small" style="left:90%;">N:</p>
+            </div>
+
+        </div>
+
+    </center>
+</body>
+{% endblock %} 

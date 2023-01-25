@@ -1,0 +1,30 @@
+{% extends "base.html" %} {% block title %}Upload Interview{% endblock %} {% block content
+    %}
+    <h1 style="color:white; ">Welcome</h1>{{user.name}}
+    <center>
+        <div class="rectangle" style=" width:656px; height:511px">
+            <div class="rec_item">
+                <br>
+                <h3>Upload Interview</h3>
+                <br>
+                
+                <form method="POST" action="{{ url_for('auth.upload_interview') }}" enctype="multipart/form-data">
+                   
+                    <label for="img">Choose Applicant:</label>
+                    
+                    <select id="applicant" name="applicant" >
+                        {%for o in query%}
+                        <option value="{{o.name}}">{{o.name}}</option>
+                        {%endfor%}
+                    </select><br><br>
+                    
+                    <label >Select File:</label>
+                    <input type="file" id="file" name="file" accept="video/*"><br>
+                    <br>
+                    <input type="submit">
+                  </form>
+            </div>
+        </div>
+    </center>
+
+{% endblock %}    

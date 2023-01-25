@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+{% block title%}Home{% endblock %}
+{% block content %}
+
+<h1 style="color:white; ">Welcome</h1>{{user.name}}
+<center>
+
+
+<div class="rectangle"style="top:100px">
+ 
+    <div class="rec_item">
+    <br>
+    <a href="/add-applicant">
+        <img src="..\static\add_applicant.jpg" width="200px" height="200px">
+        <h3>Add Applicant</h3>
+    </a>
+    </div>
+    <div class="rec_item">
+        <br>
+        <a href="/view-applicants">
+        <img src="..\static\view_applicant.jpg" width="200px" height="200px">
+        <h3>View Applicant</h3>
+        </a>
+    </div>
+    <div class="rec_item">
+        <br>
+        <a href="/upload-interview">
+        <img src="..\static\upload_interview.jpg" width="200px" height="200px">
+        <h3>Upload Interview</h3>
+        </a>
+    </div>  
+    <div class="rec_item">
+        <br>
+        <a href="/view-reports">
+        <img src="..\static\view_reports.jpg" width="200px" height="200px">
+        <h3>View Reports</h3>
+        </a>
+    </div>
+   
+  </div>
+</center>
+        {% endblock %}

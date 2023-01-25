@@ -1,0 +1,62 @@
+{% extends "base.html" %} {% block title %}Sign Up{% endblock %} {% block
+    content %}
+    <center>
+        
+      <div class="rectangle" style="top:100px; width:454px; height:536px">
+       
+          <div class="rec_item">
+          <br>
+          
+    <form method="POST">
+      <h3 align="center">Sign Up</h3>
+      <div class="form-group">
+        <label for="id">ID</label>
+        <input
+          type="id"
+          class="form-control"
+          id="id"
+          name="id"
+          placeholder="Enter ID"
+        />
+      </div>
+      <div class="form-group">
+        <label for="name">Name</label>
+        <input
+          type="text"
+          class="form-control"
+          id="name"
+          name="name"
+          placeholder="Enter first name"
+        />
+      </div>
+      <div class="form-group">
+        <label for="password1">Password</label>
+        <input
+          type="password"
+          class="form-control"
+          id="password1"
+          name="password1"
+          placeholder="Enter password"
+        />
+      </div>
+      <div class="form-group">
+        <label for="password2">Password (Confirm)</label>
+        <input
+          type="password"
+          class="form-control"
+          id="password2"
+          name="password2"
+          placeholder="Confirm password"
+        />
+      </div>
+      
+      <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+  </div>
+
+</div>
+{% for mesg in get_flashed_messages() %}
+     <h5>{{ mesg }}</h5>
+     {% endfor %}
+<center>
+{% endblock %}

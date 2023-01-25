@@ -1,0 +1,24 @@
+{% extends "base.html" %} {% block title %}Login{% endblock %} {% block content
+  %}
+  <center>
+        
+    <div class="rectangle" style="top:100px; width:454px; height:536px">
+     
+        <div class="rec_item">
+        <br>
+            
+            <h3>Login</h3>
+            <form method="POST">
+                <label for="id">ID:</label>
+                <input type="text" id="id" name="id" placeholder="Enter ID"><br><br>
+                <label for="password">Password:</label>
+                <input type="password" id="pass" name="password" placeholder="Enter password"><br><br>
+                <button type="submit" class="btn btn-primary btn-lg btn-block">Login</button>
+              </form>
+        </div>
+      </div>
+      {% for mesg in get_flashed_messages() %}
+     <h5>{{ mesg }}</h5>
+     {% endfor %}
+    </center>
+  {% endblock %}
