@@ -93,13 +93,15 @@ def upload_interview():
     if request.method == 'POST':
         file = request.files['file'] 
         nname= request.form.get('applicant')
- 
+        filename= file.filename
+        file.save(os.path.join('interviews', filename))
         result = Applicant.query.filter_by(name=nname).first()
         
-        new_interview = InterviewVideo(video=b'file', applicant_phone=result.phone, admin_id=current_user.id )
+        new_interview = InterviewVideo(applicant_phone=result.phone, admin_id=current_user.id )
         db.session.add(new_interview)
         db.session.commit()
-        videoToframes(file)
+        videoToframes(new_interview.id)
+        
     return render_template("upload_interview.html", user=current_user,query=Applicant.query.all())
 
 @auth.route('/view-reports', methods=['GET','POST'])
